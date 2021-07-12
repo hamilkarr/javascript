@@ -28,4 +28,6 @@
         -history: 브라우저의 방문 기록을 다루는 객체
         -navigator: 현재 브라우저가 실행되고 있는 환경에 대한 객체
 
+    window.console
+
 
