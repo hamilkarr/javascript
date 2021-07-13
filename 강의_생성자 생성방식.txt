@@ -16,12 +16,19 @@
 2. { }로 객체를 생성하는 방식
 
     const person = {
-      age: 40,
-      gender: "F"
-      walk:  function() {
-        console.log("걷기");
-      }
-    }
+	age : 40,
+	gender : "F",
+	walk : function() {
+		console.log("걷기");
+	}
+};
+
+const person = new Object();
+person.age = 40;
+person.gender = "F";
+person.walk = function() {
+	console.log("걷기");
+};
 
 
 생성자 구조
