@@ -1,7 +1,15 @@
-//  3) 구구단에서 1,3,5,7,9단을 출력 하시오
-// 			-> 짝수인 구구단만 건너뛰고 출력
-for (var i = 1; i <= 9; i++) { if (i % 2 == 0) { continue; } 
-    for (var j = 1; j <= 9; j++) { 
-        console.log(i + " X " + j + " = " + i * j);
-    }
-    console.log("------------------------------------------");}
+function Person ( age,gender) {
+    this.age = age;
+    this.gender = gender;
+}
+
+const person1= new Person(40,"F");
+const person2= new Person(50,"M");
+
+person1
+
+
+
+(function(a,b){})(2,3);
+
+const result = (function(a,b){return a+b;})(2,3);

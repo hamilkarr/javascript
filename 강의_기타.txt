@@ -34,6 +34,8 @@
 
     const - constants - 상수 (변하지않는값)
 
+    const로 일단 정의 -> 만약 변경이 필요한 변수 -> let
+
 
 ECMAScript -> 자바스크립트 표준
 
