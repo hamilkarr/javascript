@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script>
+    window.onload = function() { 
+      let start = 0;
+      let interval;
+
+      //타이머 요소 선택 - innerHTmL >> HTML 대입 >> 요소 내부에 추가
+      const timer = document.getElementById("timer");
+      
+      //시작버튼 클릭
+      document.getElementById("start").onclick = function() {
+        interval = setInterval(function() {
+          timer.innerHTML = start;
+          start++;
+        },1000)
+      };
+        
+      
+      //정지버튼 클릭
+      document.getElementById("stop").onclick = function() {
+        clearInterval(interval);
+      };
+    };
+
+  </script>
+  <title>Document</title>
+</head>
+<body>
+  <div id="timer"></div>
+  <button id="start">시작</button>
+  <button id="stop">정지</button>
+</body>
+</html>

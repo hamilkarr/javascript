@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script>
+    window.onload = function () {
+      const ul = document.querySelector("ul");
+      const menu2 = document.getElementById("menu2");
+
+      //removeChild
+      ul.removeChild(menu2);
+
+      //요소를 메뉴 4앞에 메뉴 3-1로 추가
+      const newLi = document.createElement("li");
+      const textLI = document.createTextNode("메뉴3-1")
+      newLi.appendChild(textLi);
+      console.log(newLi);
+      newLi.id = "menu3_1";
+      
+      const menu4 = document.getElementById("menu4");
+      ul.insertBefore(newLi,menu4);
+
+
+      //메뉴5가 제거되고 메뉴 1로 변경 -replaceChild
+
+      const menu1 = document.getElementById("menu1");
+      const menu5 = document.getElementById("menu5");
+
+      ul.replaceChild(menu5, menu1);
+      
+      // innerHTML - ul 하위의 HTML 추출
+      console.log("innerHTML",ul.innerHTML);
+
+      // innerHTML에 값 대입
+      ul.innerHTML = "<h1>innerHTML</h1>"
+
+      //innerText
+      const h1 = document.q
+
+    };
+  </script>
+</head>
+<body>
+  <ul>
+    <li id='menu1'>메뉴1</li>
+    <li id='menu2'>메뉴2</li>
+    <li id='menu3'>메뉴3</li>
+    <li id='menu4'>메뉴4</li>
+    <li id='menu5'>메뉴5</li>
+  </ul>
+</body>
+</html>
