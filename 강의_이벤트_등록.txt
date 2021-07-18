@@ -13,7 +13,7 @@
         - true - 캡처링 단계에서 -> 이벤트 전파
 
     이벤트 핸들러에 인수로 전달되는 이벤트 객체
-    addEventListener("click,function(event) {
+    addEventListener("click",function(event) {
 
     });
 

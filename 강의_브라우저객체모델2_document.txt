@@ -10,9 +10,12 @@ window
 			-> HTML 각 태그를 읽을 수 있는 상태 X
 			-> 선택할 수 있는 대상이 없다
 			
-			script 태그 속성 - defer  -> 스크립트 태그 안쪽 내용을 DOMContentLoaded 이벤트 발생 후에 실행 하겠다
-											<script defer src="dom_test.js"></script>
-							     - async 
+			script 태그 속성 
+			
+			- defer  -> 스크립트 태그 안쪽 내용을 DOMContentLoaded 이벤트 발생 후에 실행 하겠다
+				<script defer src="dom_test.js"></script>
+			
+			- async 
 								 
 		
 			- HTML 요소를 선택하는 방법

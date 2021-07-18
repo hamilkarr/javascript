@@ -10,8 +10,10 @@
 
     1) document 객체의 속성 값에 이벤트 핸들러 등록
 
-        // 예시
-
+        document.getElementById("click").onclick = function() {
+			alert("클릭 하셨습니다.");
+		};
+        
     2) document 객체의 addEventListener로 등록하는 방식
 
     3) HTML 태그에 속성 추가 방식
