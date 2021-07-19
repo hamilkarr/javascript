@@ -1,0 +1,9 @@
+forEach(callback) {
+  for (let i = 0; i < data.length; i++) {
+     callback(data[i], i .. )
+   }
+}
+
+forEach(function(el, i) {
+
+});
