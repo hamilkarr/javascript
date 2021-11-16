@@ -1,0 +1,35 @@
+브라우저(V8)
+자바스크립트 코어(ECMAScript)
++ 브라우저 객체모델
+
+Window
+  - location
+  - history
+  - screen
+  - navigator
+  - document
+
+Node.js
+자바스크립트 코어(ECMAScript)
++ 노드 내장 모듈
+
+<script [async|defer] src='외부 경로'></script>
+async -> 비동기 (DOM트리 구조 생성과 상관없이 실행되므로 HTML 요소는 선택이 안될 수도 있다.)
+      -> 독립적인 무거운 스크립트 실행
+
+defer -> DOMContentLoaded 발생 이후 실행 (HTML 요소 선택 가능)
+
+var,let,const
+
+var -  함수 지역 범위를 가지는 선언자
+{ ~ } 지역범위를 가지는 선언자
+let : 일반변수
+const : 상수
+
+변수를 선언할때 가급적이면 const를 사용하고
+변경이 필요할때만 let을 사용
+
+변수의 명명규칙 
+  - 사용할 수 있는 문자는 알파벳(a-z, A-Z), 숫자(0--9), 밑줄(_), 달러 기호($)
+  - 첫 글자로는 숫자를 사용할 수 없다. 즉 첫 글자는 알파벳(a-z, A-Z), 밑줄(_), 달러기호($)중 하나
+  - 예약어를 식별자로 사용할 수 없다
