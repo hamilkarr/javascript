@@ -1,4 +1,10 @@
-const a = ['apple', 'mango', 'banana'];
+window.addEventListener('DOMContentLoaded', function () {
+  const button = document.getElementById('button');
+  const type = button.getAttribute('type');
+  const id = button.getAttribute('id');
+  const value = button.getAttribute('value');
 
-const b = a.slice(0);
-console.log(b);
+  console.log(value);
+
+  button.setAttribute('price', 2000);
+});

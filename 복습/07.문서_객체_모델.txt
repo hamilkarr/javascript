@@ -1,0 +1,64 @@
+07.문서 객체 모델
+Document Object Model
+브라우저 -> 웹주소 -> 서버에서 응답 ->html문서를 수신
+-> DOM Tree 구축 -> DOMContentLoaded 이벤트 -> 외부 resource가 로딩(이미지,내부프레임,비디오...) -> Load 이벤트 발생
+
+DOM Tree 생성 이후 사용이 가능
+1. 요소를 선택하는 방법
+  document.getElementById('IdName') :아이디로 선택
+  document.getElementsByClass('ClasName') : 클래스로 선택
+  document.getElementsByTagName('TagName') : 태그로 선택
+  
+  document.querySelector("CSS 선택자") -> 가장 처음에 찾는 1개 요소만 선택
+  document.querySelectorAll("CSS 선택자") -> 매칭 되는 모든 요소를 선택
+
+2. 요소의 속성을 통제하는 메서드 (선택 이후)
+  document 
+    .setAttribute('속성명','값'); // 속성 지정
+    .getAttribute('속성명'); // 속성값 조회
+    .removeAttribute('속성명'); // 속성값 제거
+
+  기능적으로 이미 정의되어 있는 속성
+    type, name, id, class, value, style... ->속성 관련 메서드 없이 요소에서 바로 접근이 가능.
+    Element.type, Element.name, Element.value
+
+    class -> 요소.className
+
+    사용자 정의속성의 경우!!
+      data - 속성명 으로 사용
+      요소.dataset 속성(객체) -> 속성 조회,삭제(delete),수정
+    
+    클래스 속성을 다루는 객체
+      Element.classList
+        .add('ClasName'); -> 클래스명 추가
+        .remove('ClasName'); -> 클래스명 제거
+        .toggle('ClassName'); -> 클래스명이 있으면 제거, 없으면 추가
+        .contains('ClasName'); -> 클래스 명이 포함되어 있는지 여부
+
+3. 요소의 생성
+  document
+    .createElement("TagName") : 디브태그 생성
+    .createTextNode("Text") : 디브태그 사이의 텍스트 생성
+
+    <div>Text</div>
+
+    ParentElement.appendChild(생성한 요소); 
+    ParentElement.removeChild(제거할 요소); 
+    ParentElement.replaceChild(새로운 요소, 변경될 자식 요소);
+    ParentElement.insertBefore(추가할 요소, 기준 자식 요소);
+
+4. 요소에 있는 HTML, Text 
+  SelectElement.innerHTML (HTML)
+    -> 값을 읽으면 가져오고, 변경하면 변경 내용이 반영
+
+  SelectElement.innerText (TEXT)
+    -> 값을 읽으면 가져오고, 변경하면 변경 내용이 반영
+    
+5. 부모, 자식 요소 선택 
+   children 
+   parentElement
+   firstChildElement
+   lastChildElement
+   nextElementSibling
+   previousElementSibling
+   childElementCount

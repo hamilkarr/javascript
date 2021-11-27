@@ -1,11 +1,66 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <!-- <script defer src="script.js"></script> -->
-    <script async src="script.js"></script>
-  </head>
-  <body>
-    <button id="button">버튼</button>
-  </body>
+<head>
+	<meta charset='utf-8'>
+	<script>
+	window.addEventListener("DOMContentLoaded", function() {
+		const button = document.getElementById("button1");
+		//const type = button.getAttribute("type");
+		const type = button.type;
+		//const id = button.getAttribute("id");
+		const id = button.id;
+		
+		//const value = button.getAttribute("value");
+		const value = button.value;
+		
+		console.log(type, id, value);
+		
+		button.setAttribute("price", 2000);
+		button.setAttribute("price2", 2000);
+		
+		button.removeAttribute("price2");
+		
+		button.setAttribute("type", "text");
+		
+		/**
+		button.className = "class1";
+		button.className = button.className + " class2";
+		let className = button.className.split(" ");
+		className.shift();
+		button.className = className.join(" ");
+		*/
+		const classList = button.classList;
+		classList.add("class1");
+		classList.add("class2");
+		classList.toggle("class3");
+		
+		console.log(classList.contains("class3"));
+		
+		setTimeout(function() {
+			classList.toggle("class3");
+		}, 3000);
+		
+		console.log(classList.contains("class3"));
+		classList.remove("class1");
+		console.log(classList);
+		
+		// type="ready" (X)  data-type="ready" (O)
+		//button.setAttribute("data-type", "ready");
+		//button.setAttribute("data-price", 20000);
+		//const type2 = button.getAttribute("data-type");
+		//console.log(type2);
+		const dataset = button.dataset;
+		dataset.type = "ready";
+		dataset.price = 20000;
+		
+		dataset.price =30000;
+		
+		delete dataset.type;
+		// 
+	});
+	</script>
+</head>
+<body>
+	<input type="button" id="button1" value="버튼">
+</body>
 </html>

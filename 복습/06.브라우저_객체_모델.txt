@@ -1,0 +1,51 @@
+06.브라우저 객체 모델
+  브라우저 -> 자바스크립트 해석기 (runtime)
+    자바스크립트 코어(ECMAScript6+)
+    + 브라우저 객체 모델
+    (브라우저와 관련된 기능)
+
+  노드.js -> 자바스크립트 해석기(runtime)
+    자바스크립트 코어 (ECMAScript6+ ES6+)
+    + 노드 내장 모듈
+
+  window
+    - location : 주소창과 관련 있는 기능
+      .assign(url) -> 페이지 이동 -> 방문 기록이 저장되는 페이지 이동(history.back, history.forward)
+        - location.href 속성의 값을 변경해도 동일하게 페이지 이동(방문기록 저장)
+      .replace(url) -> 페이지 이동 -> 방문기록이 남지 않음. -> DB처리시 replace로 처리(assign, href 속성으로 이동한 후 뒤로가기 -> 데이터가 이중으로 처리되는 문제가 발생)
+      .reload() -> 새로고침
+
+    - history : 웹브라우저 방문 기록과 관련되어 있는 기능
+      .length : 방문 기록 개수
+      .scrollRestoration 
+        - auto: 페이지 이동후 다시 뒤로가기 했을때 기존 스크롤 위치를 유지 
+        - manual: 페이지 이동후 다시 뒤로가기 했을때 기존 스크롤 위치를 가장 상단으로 고정
+      back() -> 한단계 뒤록 가기
+      forward() -> 한단계 앞으로 가기
+      go()  
+        음수 -> 뒤로가기    go(-2) -> 뒤로 2단계 이동 
+				양수 -> 앞으로 가기  go(2) -> 앞으로 2단계 이동
+
+
+    - screen : 구현 화면에 대한 정보
+    - navigator : 웹브라우저의 실행 환경에 대한 정보
+    - document 
+      : HTML 문서와 관련되어 있는 객체 -> 문서의 요소(태그)를 조작
+      : 이벤트 처리      
+  
+  window
+    .alert() -  알림
+    .confirm() - 확인
+    .prompt() - 사용자가 입력할수 있는 창
+    .open(url, ...) - 새로운 창을 열때
+
+    시간관련 -  비동기
+    setTimeout(function(...), 지연간격) -> 시간 지연,지연간격 -> 밀리초 단위
+    setInterval(function(...), 반복간격) -> 시간 지연 반복 실행,반복간격 -> 밀리초 단위.
+
+    clearTimeout(... setTimeout으로 등록된 실 영역 함수의 백그라운드 ID); -> 지연 실행 취소
+    clearInterval(... setInterval로 등록된 실행 영역 함수의 백그라운드 ID); -> 반복 실행 취소
+
+  window.객체 ....
+  (window는 생략 가능)
+  window.location.assign(...) -> location.assign(...)

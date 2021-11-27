@@ -70,10 +70,73 @@ Array 생성자
     -ceil() -> 올림
     -floor() -> 버림
 
-    -max() -> 최대값
-    -min() -> 최소값
-    -random() 0 이상 1 미만의 수 범위의 난수
+    - max() -> 최대값
+    - min() -> 최소값
+    - random() 0 이상 1 미만의 수 범위의 난수
     - sign()-> 음수 -> -1, didtn -> 1,0,
 
-    
+  Number
+    -> Number(...) -> 문자열이 숫자로 변경.
+    .isNaN() -> Not a Number -> 숫자가 아니면 true|false
+    .parseFloat() -> 실수로 변경
+    .parseInt() -> 정수로 변경
+    .toFixed() -> 고정 소수점으로 문자열 숫자 표기
+    .toLocaleString()-> 지역(국가)에 맞는 
 
+  Boolean
+    -> Boolean(...) -> 문자열을 논리값으로 평가
+      false로 인식하는 조건 : 0, "", null, undefined
+      false가 아닌 true인 조건 : [], {}
+  
+  
+  Date
+    -> 생성자 -> 인스턴스 생성 시점의 날짜와 시간
+      생성자 매개변수로 년도,월,일,시,분,초
+        -> 문자열 형태의 시간 -> 특정 시간대의 Date 인스턴스가 만들어진다.
+        -> Date 인스턴스
+
+    prototype
+      .getFullYear() -> 년도 예) 2021
+      .getMonth() -> 월 0 ~ 11, 실제 출력시에는 +1 해줘야함.
+      .getDate() -> 일 1~31
+      .getDay() -> 요일 0~6 // 0 - 일요일, 1 - 월요일 ... 6 - 토요일
+      .getMinutes() -> 분
+      .getSeconds() -> 초
+
+      .getTime() -> 1970.1.1 자정부터 현재까지 천분의 1초 단위로 카운팅한 정수 // php - time() -> 초단위
+      .toLocaleString() -> 지역에 맞는 시간 표기법으로 출력
+
+  .now() == Date.prototype.getTime();
+
+Map : key,value 쌍 (제너레이터)
+  new Map(초기값 -> 배열)
+  new Map([
+    [키,값],
+    [키,값],
+    ...
+  ]);
+
+  prototype
+    .size - 요소의 개수
+    .set(key,value): // java - put
+    .get(key)
+    .delete(key); // java - remove
+    .has(key); // java - containsKey
+    .clear();
+    .key() 키값만 가져옴 -> // java - keySet();
+    .values() 
+    .entries() key, value 쌍으로 조회 // java entrySet() Set<Map.Entry>
+    .forEach()
+    .for ... of ...
+
+Set : 집합자료형
+  new Set(["value1",'value2','value3']);
+
+  .prototype
+    .add("value");
+    .has("value");
+    .delete('value');
+    .entries(); - The entries() method returns a new Iterator object that contains an array of [value, value] for each element in the Set
+
+    .forEach - function(value,value,thisArg);
+    .values();
