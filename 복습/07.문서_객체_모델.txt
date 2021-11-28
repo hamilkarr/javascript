@@ -55,10 +55,30 @@ DOM Tree 생성 이후 사용이 가능
     -> 값을 읽으면 가져오고, 변경하면 변경 내용이 반영
     
 5. 부모, 자식 요소 선택 
-   children 
-   parentElement
-   firstChildElement
-   lastChildElement
-   nextElementSibling
-   previousElementSibling
-   childElementCount
+   children -> 자식요소들
+   parentElement -> 부모 요소
+   firstChildElement -> 자식중에서 첫번째
+   lastChildElement -> 자식중에서 마지막
+   nextElementSibling -> 바로 다음 형제 요소
+   previousElementSibling -> 바로 전 형제 요소
+   childElementCount -> 자식 요소 갯수
+
+6. 이벤트
+사용자가 버튼을 클릭하면 -> 클릭 햇습니다. 메세지 출력
+
+addEventListener("click", function() {
+
+});
+
+선택한 요소
+  .addEventListener("이벤트명", 이벤트 핸들러 함수, 캡쳐링 사용 여부)
+
+  이벤트 핸들러 -> 이벤트 명으로 정의된 동작이 발생하면 실행되는 함수
+  이벤트 핸들러 함수의 매개 변수는 -> 이벤트 객체(from addEventListener 내부에서 넘겨준 이벤트 객체)
+
+  이벤트 객체 -> 이벤트가 발생한 요소에 대한 정보 + 메서드
+
+
+이벤트가 발생하는 순서
+  가장 상위 Tree 요소에서 발생한 요소까지 찾는 단계 -> 캡쳐링 단계
+  이벤트가 실행되는 단계 -> 발생한 요소 -> 상위 요소까지 등록된 이벤트를 모두 실행 -> 버블링 단계
