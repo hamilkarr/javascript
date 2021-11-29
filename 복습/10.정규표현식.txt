@@ -1,0 +1,6 @@
+정규표현식
+  RegExp 생성자
+    /패턴/ -> new RegExp(...) RegExp 인스턴스
+      RegExp.prototype
+        .test(패턴) -> 패턴의 일치 여부(true|false)
+        .exec(패턴) ->

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      window.addEventListener('DOMContentLoaded', function () {
+        const button = document.getElementById('button');
+        const html = document.getElementById('html');
+        button.addEventListener('click', function () {
+          const xhr = new XMLHttpRequest();
+          const url = '_XHLHttpRequest.html';
+          xhr.open('GET', url);
+          xhr.addEventListener('readystatechange', function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+              const result = xhr.responseText;
+
+              const json = JOSON.parse(result);
+              console.log(json);
+              html.innerHTML = result;
+            }
+          });
+          xhr.send(null);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button id="button">메뉴 불러오기</button>
+    <div id="html"></div>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      window.addEventListener('DOMContentLoaded', function () {
+        const file = document.getElementById('file');
+        const html;
+        file.addEventListener('change', function (e) {
+          console.log(e);
+          const f = e.target.files[0];
+          console.log(f);
+          if (f.type.indexOf('image') == -1) {
+            alert('이미지 형식의 파일만 업로드해라');
+            return;
+          }
+
+          const reader = new FileReader();
+
+          reader.addEventListener('loadstart', function (e) {
+            console.log('loadstart');
+          });
+
+          reader.addEventListener('progress', function (e) {
+            const loaded = e.loaded;
+            const total = e.total;
+            const percent = Math.round(loaded/total * 100)
+            if (percent > 100) percent = 100;
+
+          });
+          reader.addEventListener('load', function (e) {
+            const data = reader.result;
+            html.innerHTML = "<img src='" + data + "'>";
+
+            // ajax -> 원격 서버에 reader.result(base64 데이터) -> 전송해서 원격 서버에 저장
+          });
+          reader.addEventListener('error', function (e) {
+            console.error(e);
+          });
+
+          reader.readAsDataURL(f);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <input type="file" name="file" id="file" />
+    <div id="html"></div>
+  </body>
+</html>

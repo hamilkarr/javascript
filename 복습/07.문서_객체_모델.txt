@@ -77,8 +77,39 @@ addEventListener("click", function() {
   이벤트 핸들러 함수의 매개 변수는 -> 이벤트 객체(from addEventListener 내부에서 넘겨준 이벤트 객체)
 
   이벤트 객체 -> 이벤트가 발생한 요소에 대한 정보 + 메서드
+    - stopPropagation() - 이벤트 전파(버블링) 차단
+    - preventDefault() - 기본 이벤트 동작 차단
 
 
 이벤트가 발생하는 순서
   가장 상위 Tree 요소에서 발생한 요소까지 찾는 단계 -> 캡쳐링 단계
   이벤트가 실행되는 단계 -> 발생한 요소 -> 상위 요소까지 등록된 이벤트를 모두 실행 -> 버블링 단계
+
+이벤트명 - > 클릭이벤트가 압도적으로 많이 사용
+  click / touch
+  change -> select를 선택 했을때, file을 선택 했을때, text=number-> 수치를 화살표로 변경 했을때
+  resize -> 브라우저 창의 사이즈를 변경 했을때
+  scroll -> 스크롤될때
+  mouseenter -> 요소에 마우스가 올라 갔을때
+  mouseleave -> 요소에 마우스 커서가 벗어 낫을때.
+  
+  focus -> 사용자가 폼 요소를 클릭하거나 Tab 키를 눌러 요소로 이동하면 해당 요소가 포커스(focus)됩니다
+  blur ->
+  focus 이벤트는 요소가 포커스를 받을 때, blur 이벤트는 포커스를 잃을 때 발생합니다.
+
+
+  keyup -> 키를 눌렀다가 땔떼
+
+선택한 요소.on이벤트명 = 이벤트 핸들러 함수
+
+태그 안에 on이벤트명 = '이벤트 핸들러'
+
+setTimeout(function() {
+  // 실행부분
+}, 지연 시간)
+
+setInterval(function() {
+  // 실행부분
+}, 반복 지연시간);
+
+이벤트 -> 비동기

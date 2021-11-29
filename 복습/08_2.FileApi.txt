@@ -1,0 +1,13 @@
+FileAPI
+  FileReader 생성자
+    .readAsDataURL(File 인스턴스)
+
+    이벤트
+      .loadstart -> 업로드 시작
+      .progress -> 업로드 진행중      
+      .load - 업로드 완료시
+        FileReader 인스턴스 .result 속성 - 업로드된 파일 데이터(readAsDataURL -> base64 인코딩) // Arraybuffer
+      .loadend
+      .error -> 업로드 실패
+
+      .e -> 이벤트 객체 -> 파일 업로드 상태

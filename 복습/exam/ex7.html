@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // window.onload = function () { // window.onload - 이벤트 핸들러 함수 객체의 참조 주소
+      //   alert('onload First!');
+      // };
+
+      // window.onload = function () { // window.onload - 이벤트 핸들러 함수 객체의 참조 주소
+      //   alert('onload Second!');
+      // };
+
+      // 마지막에 대입된 함수 객체의 참조 주소가 window.onload에 담겨있는 값, 마지막에 대입되어 있는 이벤트 핸들러만 동작한다.
+
+      /*
+      window.addEventListener('load', function () {
+        alert('onload First!');
+      });
+
+      window.addEventListener('load', function () {
+        alert('onload Second!');
+      });
+      */
+      window.addEventListener('DOMContentLoadead', function () {
+        const button = document.getElementById('button');
+        button.onclick = function () {
+          alert('클릭1');
+        };
+
+        button;
+      });
+    </script>
+  </head>
+  <body>
+    <button id="button">클릭</button>
+  </body>
+</html>
