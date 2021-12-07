@@ -1,0 +1,90 @@
+1.필수 모듈 추가 + 필수 모듈 미들웨어 등록
+  express, dotenv, nunjucks, cookie-parser, express-session, morgan - dependencies
+  nodemon - devDependencies
+
+2. express
+  a. 인스턴스 생성: const app = express();
+  b. listen(포트번호, 이벤트 핸들러(listening));
+
+3. 없는 페이지 처리 공통 라우터
+  (모든 요청, 모든 메서드 - use)
+
+4. 오류 처리 공통 라우터
+  (모든 요청, 모든 메서드, 미들웨어의 매개 변수 총 4개 - err, req,res,next)
+
+5. 정적 경로
+  express.static("경로"); <- path.join()
+
+6.body-parser 미들웨어 등록
+  express.json();
+  express.urlencoded({extended:false})
+
+7. 라우터 구성
+  const router = express.Router();
+
+  module.exports = router;
+
+  -> 라우터 구성 미들웨어
+    - 각 페이지별 라우터 구성
+
+  router.route("공통 URL")
+    .get(...)
+    .post(...)
+    .patch(...)
+
+8. 사용할 템플릿엔진 설치
+  nunjucks(외부 모듈 - mozila)
+  npm i nunjucks
+
+  1) 템플릿 기본 경로 폴더
+  2) 셋팅 
+    app.set("view engine", "템플릿 확장자");
+    ex)  app.set("view engine", "html");
+
+    nunjucks.configure("템플릿 폴더 경로",{
+      express : 익스프레스 객체,
+      watch : true(템플릿 html 내용이 변경되면 자동으로 다시 렌더링) || false
+    })
+
+  기본문법
+  {% ~ 변수설정,조건문,반복문 %}
+  변수설정 {% set 변수명 = '값' %}
+  {% for 요소 in 배열 객체 %}
+
+  {% endfor %}
+
+  for 문안에 loop.index -> 반복 순서 번호(1부터 시작)
+
+  출력 
+  {{ 변수 }} -> 문자열만 출력(HTML도 문자로 인식)
+
+  HTML 형태로 출력하는 경우
+  {{변수 | safe}}
+
+  {% if 조건  %}
+  || -> or (조건1 or 조건2...)
+  && -> and (조건1 and 조건2...)
+  ! -> not (not isLogin)
+
+  {% elif 조건 %}
+
+  {% else %}
+
+  {% endif %}
+
+  파일추가
+  {% include '파일 경로' %}
+
+  템플릿
+
+  템플릿 -> 공통으로 사용될 레이 아웃
+  사용할 html에서는
+
+  {% extends '템플릿 파일 경로' %}
+
+  템플릿 html파일에
+  {% block 이름 %}
+  // 템플릿 사용 영역에서 치환할 부분
+  {% endblock %}
+
+
