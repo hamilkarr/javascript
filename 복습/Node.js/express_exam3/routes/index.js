@@ -2,6 +2,7 @@ const express = require('express');
 const memberRouter = require('./member');
 const orderRouter = require('./order');
 const fileRouter = require('./file');
+const dbRouter = require('./database');
 const router = express.Router();
 
 router.use((req, res, next) => {
@@ -33,5 +34,11 @@ router.use('/order', orderRouter);
  * /file
  */
 router.use('/file', fileRouter);
+
+/**
+ * db 연습 관련
+ * /db
+ */
+router.use('/db', dbRouter);
 
 module.exports = router;
